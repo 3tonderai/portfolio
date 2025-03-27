@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 1s ease-out;
+}
+
+/* Typing animation for name */
+.animate-typing {
+  overflow: hidden;
+  border-right: 2px solid #3B82F6;
+  white-space: nowrap;
+  width: 0;
+  animation: typing-name 3.5s steps(40, end) forwards,
+             blink-caret .75s step-end infinite;
+}
+
+/* Typing animation for profession */
+.animate-profession {
+  overflow: hidden;
+  border-right: 2px solid #3B82F6;
+  white-space: nowrap;
+  width: 0;
+  animation: typing-profession 3.5s steps(40, end) forwards,
+             blink-caret .75s step-end infinite;
+  animation-delay: 3.5s; /* Start after name finishes */
+}
+
+@keyframes typing-name {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes typing-profession {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #3B82F6; }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B82F6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Hover effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #3B82F6, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
